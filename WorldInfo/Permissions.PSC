@@ -8,12 +8,11 @@
 // + - Add extra Permission
 
 >> Admin > Enter+Kick+Ban+Teleport
+JustAPancake
 
 >> Moderator > Enter+Kick+Ban
 AnGEliCxSiLenCE
-Chris_is_lost
 DjangoRxv
-JustAPancake
 Kyrillk
 LoreVictim
 loupblanc00
@@ -25,3 +24,4 @@ TheKittenPrince
 亗『queen』亗
 
 >> Member > Enter
+Chris_is_lost
