@@ -7,7 +7,9 @@
 // > - Permission Statement
 // + - Add extra Permission
 
->> Moderator > Moderator
+>> Admin > Enter+Kick+Ban+Teleport
+
+>> Moderator > Enter+Kick+Ban
 AnGEliCxSiLenCE
 Chris_is_lost
 DjangoRxv
@@ -21,3 +23,5 @@ PvtWendy
 Sam Von Mox
 TheKittenPrince
 亗『queen』亗
+
+>> Member > Enter
