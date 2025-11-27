@@ -58,46 +58,38 @@ font-weight: 600;
 
 
 <div class="file-list" id="fileList"></div>
-<div class="file-item"><a href="example2.html">example2.html</a></div>
-<div class="file-item"><a href="example3.json">example3.json</a></div>
 </div>
 </div>
 <script>
 async function loadFiles() {
-const repoOwner = "Always2Sleepy";
-const repoName = "NM-Repo";
-const folderPath = "WorldInfo";
+    const repoOwner = "Always2Sleepy";
+    const repoName = "NM-Repo";
+    const folderPath = "WorldInfo";
 
+    const url = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${folderPath}`;
+    const fileList = document.getElementById("fileList");
 
-const url = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${folderPath}`;
-const fileList = document.getElementById("fileList");
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
 
+        data.forEach(item => {
+            if (item.type === "file" && item.name !== "index.html") {
+                const div = document.createElement("div");
+                div.className = "file-item";
 
-try {
-const res = await fetch(url);
-const data = await res.json();
+                const a = document.createElement("a");
+                a.href = item.name;
+                a.textContent = item.name;
 
-
-data.forEach(item => {
-if (item.type === "file") {
-const div = document.createElement("div");
-div.className = "file-item";
-
-
-const a = document.createElement("a");
-a.href = item.name;
-a.textContent = item.name;
-
-
-div.appendChild(a);
-fileList.appendChild(div);
+                div.appendChild(a);
+                fileList.appendChild(div);
+            }
+        });
+    } catch (e) {
+        fileList.innerHTML = "<p>Failed to load files.</p>";
+    }
 }
-});
-} catch (e) {
-fileList.innerHTML = "<p>Failed to load files.</p>";
-}
-}
-
 
 loadFiles();
 </script>
